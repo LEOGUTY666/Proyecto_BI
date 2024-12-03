@@ -1,0 +1,202 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.6;
+}
+
+.header {
+  background-color: #333333;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.header .logo h1 {
+  margin: 0;
+}
+
+/*.header .logo img {
+  max-height: 50px;
+  width: auto;
+}*/
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar ul li {
+  margin: 0 1rem;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-toggle {
+      display: block;
+  }
+
+  .navbar {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #333333;
+      display: none;
+      flex-direction: column;
+      padding: 1rem 0;
+  }
+
+  .navbar.active {
+      display: flex;
+  }
+
+  .navbar ul {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .navbar ul li {
+      margin: 0.5rem 0;
+  }
+}
+
+/*El boton animado*/
+/* From Uiverse.io by joe-watson-sbf */ 
+.btn {
+  font-size: 17px;
+  background: transparent;
+  border: none;
+  padding: 1em 1.5em;
+  color: #ffedd3;
+  text-transform: uppercase;
+  position: relative;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #06a8ff;
+  transition: 0.5s ease;
+}
+
+.btn:hover {
+  color: #ffc506;
+  transition-delay: 0.5s;
+}
+
+.btn:hover::before {
+  width: 100%;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #ffc506;
+  transition: 0.4s ease;
+  z-index: -1;
+}
+
+.btn:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: aliceblue;
+}
+
+/*PARA LA GALERIA DE IMAGENES*/
+#galeria  {
+  display: flex;
+  width: flex;
+  height: 430px;
+}
+
+#galeria img {
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: .8;
+  transition: 1s ease;
+}
+
+#galeria img:hover {
+  cursor: crosshair;
+  width: 300px;
+  opacity: 1;
+  filter: contrast(120%);
+}
+
+/* Main Content */
+main {
+  padding: 2rem;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #00468b;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background: #333;
+  color: white;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
